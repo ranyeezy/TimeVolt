@@ -5,4 +5,8 @@
     <input type="submit" name = "Add Task">
 </form>
 
-
+{% for task in tasks %}
+    <div>
+        <p>{{task}}</p>
+    </div>
+{% endfor %}
