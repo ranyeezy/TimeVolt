@@ -4,7 +4,7 @@
   Input a Task:
   <form method="POST" action="/">
     {% csrf_token %}
-    {{form.title}}
+    {{form.as_p}}
     <input class="btn btn-info" type="submit" name="Create Task" >
   </form>
 
