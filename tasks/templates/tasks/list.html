@@ -83,7 +83,7 @@ h3 {text-align: center;}
             {% if task.complete == True %} <!-- Check if task is marked complete -->
             <strike>{{task}}</strike>
             {% else %}
-            <span>{{task}}</span>
+            <span>{{ task|truncatechars:21 }}</span>
             <span style="float:right;" class="timer"><b>Due: </b>{{ task.due|timeuntil }}</span>
             {% endif %}
         </div>
