@@ -3,7 +3,6 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-
 <style>
 h3 {text-align: center;}
 
@@ -56,13 +55,18 @@ h3 {text-align: center;}
 		padding: 5.5px;
 	}
 
-
+	.logout-msg{
+		/*color: #fff;*/
+		font-size: 17px;
+		margin-left: 400px;
+	}
 
 
 
 </style>
 <div class="center-column">
     <b>Input a Task</b>
+    <span><a class = "logout-msg" href= "{% url 'logout' %}">Logout</a></span>
     <form method="POST" action="/">
         {% csrf_token %}
         <b>Task Name</b>
@@ -83,7 +87,7 @@ h3 {text-align: center;}
             {% if task.complete == True %} <!-- Check if task is marked complete -->
             <strike>{{task}}</strike>
             {% else %}
-            <span>{{ task|truncatechars:21 }}</span>
+            <span>{{task|truncatechars:21}}</span>
             <span style="float:right;" class="timer"><b>Due: </b>{{ task.due|timeuntil }}</span>
             {% endif %}
         </div>
