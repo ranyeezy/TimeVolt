@@ -1,4 +1,4 @@
-<h3 style="font-family:Impact;font-size:200px;color:#000000">Time Volt</h3>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.min.css" integrity="sha256-/8xGgcV6Mp9fFa2u2lLYOWYNluCdrHEvBfiwhpkD/Js=" crossorigin="anonymous" />
@@ -20,10 +20,22 @@
   crossorigin="anonymous">
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+.backdrop {
+
+border: 2px solid #5172a6;
+border-radius: 25px;
+margin: auto;
+width: 30%;
+background-color:#206be3;
+
+
+}
 h3 {text-align: center;}
 
 	body{
-		background-color: #FC9748;
+		background-color: #6ea4fa;
 	}
 
 	input{
@@ -68,8 +80,18 @@ h3 {text-align: center;}
 		font-size: 17px;
 		margin-left: 400px;
 	}
-
+   .background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
 </style>
+<div class="backdrop">
+    <h3 style="font-family: 'Exo', sans-serif;font-size:100px;color:#000000">Update</h3>
+
+</div>
 <div class="center-column">
   <form method="POST" action="">
     {% csrf_token %}
@@ -87,8 +109,17 @@ h3 {text-align: center;}
     <input class="btn btn-info" type="submit" name="Update Task">
   </form>
 </div>
-
+<canvas class="background"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 <script>
+window.onload = function() {
+Particles.init({
+selector: '.background',
+connectParticles: true,
+speed: .20,
+color: "#FFFFFF"
+});
+};
     $(document).ready(function(){
       var date_input=$('input[name="due"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";

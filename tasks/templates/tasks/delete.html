@@ -2,8 +2,24 @@
 
 <style>
 
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+.backdrop {
+
+border: 2px solid #5172a6;
+border-radius: 25px;
+margin: auto;
+width: 30%;
+background-color:#206be3;
+
+
+}
+h3 {text-align: center;}
 	body{
-		background-color: #638CB8;
+		background-color: #6ea4fa;
+
+
+
 	}
 
 	input{
@@ -44,6 +60,11 @@
 
 
 </style>
+
+<div class="backdrop">
+    <h3 style="font-family: 'Exo', sans-serif;font-size:100px;color:#000000">Delete</h3>
+
+</div>
 <div class="center-column">
   <p>Do you want to delete this task "{{item}}"?</p>
 
@@ -54,3 +75,15 @@
     <input class="btn btn-info" type="submit" name="Confirm">
   </form>
 </div>
+<canvas class="background"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+<script>
+window.onload = function() {
+Particles.init({
+selector: '.background',
+connectParticles: true,
+speed: .20,
+color: "#FFFFFF"
+});
+};
+</script>
