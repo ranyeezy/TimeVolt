@@ -65,8 +65,18 @@
 <div class="center-column">
   <form method="POST" action="">
     {% csrf_token %}
-
-    {{form}} <!-- Displays title of task when click on update -->
+	
+	<b>Task Name</b>
+	{{form.title}}
+	<b>Task Due Date</b>
+	{{form.due}}
+	<b>Notes</b>
+	<br>
+	{{form.notes}}
+	<br>
+	<br>
+	<b>Complete</b>
+	{{form.complete}}
     <input class="btn btn-info" type="submit" name="Update Task">
   </form>
 </div>
