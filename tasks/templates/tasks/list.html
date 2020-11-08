@@ -94,7 +94,16 @@ h3 {text-align: center;}
 
         {% endfor %}
     </div>
+<script>
 
+		var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='(ex. Exercise)';
+		form_fields[2].placeholder='Year-Month-Day (ex. 2020-12-31)';
+
+		for (var field in form_fields){	
+			form_fields[field].className += ' form-control'
+		}
+	</script>
 
 </div>
 
