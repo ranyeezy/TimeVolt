@@ -9,6 +9,7 @@
 
 
 	<style>
+
 		body,
 		html {
 			margin: 0;
@@ -72,10 +73,19 @@
 			padding: 10px;
 			margin-top: 10px;
 		}
+		   .background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
 	</style>
 
 </head>
 <body>
+
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -120,6 +130,18 @@
 			</div>
 		</div>
 	</div>
+
+<canvas class="background"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+<script>window.onload = function() {
+Particles.init({
+selector: '.background',
+connectParticles: true,
+speed: .20,
+color: "#FFFFFF"
+});
+};
+</script>
 </body>
 
 </html>
