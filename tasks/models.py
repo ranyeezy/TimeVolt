@@ -10,6 +10,8 @@ class Task(models.Model):
     complete = models.BooleanField(default=False)
     create = models.DateTimeField(auto_now_add=True)
     due = models.DateTimeField(auto_now_add=False, auto_now=False, blank=True, null=True)
+    notes = models.TextField(null=True, blank=True)
+
 
     def __str__(self):
         return (self.title)
